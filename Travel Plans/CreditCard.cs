@@ -39,7 +39,7 @@ namespace Travel_Plans
         private void Customer_Info_Load(object sender, EventArgs e)
         {
             //Creating array for card type 
-            string[] cardType = { "Card Type", "Visa", "American Express", "Master Card" };
+            string[] cardType = { "Card Type", "Visa", "Discover", "Master Card" };
             foreach (string Card in cardType)
             {
                 cboCardType.Items.Add(Card);
@@ -82,13 +82,7 @@ namespace Travel_Plans
                     Date = cboMonth.Text + "/" + cboYear.Text;//setting up value to be gotten in the form1
                     Email = txtEmail.Text;
 
-                    Tag = txtFirst.Text + txtLast.Text;
-
                     this.Hide();
-
-                    
-                          
-
                 }
             }
 
