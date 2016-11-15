@@ -82,7 +82,12 @@ namespace Travel_Plans
                     Date = cboMonth.Text + "/" + cboYear.Text;//setting up value to be gotten in the form1
                     Email = txtEmail.Text;
 
-                    this.Hide();      
+                    Tag = txtFirst.Text + txtLast.Text;
+
+                    this.Hide();
+
+                    
+                          
 
                 }
             }

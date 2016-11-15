@@ -16,7 +16,7 @@ namespace Travel_Plans
         {
             InitializeComponent();
             String[] flights = { "December 2-5 (3 days) - $350", "December 2-7 (5 days) - $450", "December 23-30 (7 days) - $550" };
-            String[] hotels = { "* - Island Beachcomber Hotel - $150", "*** - Hotel Caravelle - $250", "***** Ritz-Carlton, St. Thomas - $350" };
+            String[] hotels = { "Island Beachcomber Hotel - $150", "Hotel Caravelle - $250", "Ritz-Carlton, St. Thomas - $350" };
             foreach (string flight in flights)
             {
                 cbo_flights.Items.Add(flight);
@@ -40,6 +40,7 @@ namespace Travel_Plans
                 CreditCard f5 = new CreditCard(); //Opening the customer info form              
                 f5.ShowDialog();
             }
+            MessageBox.Show(cbo_flights.Text + "\n" + cbo_hotels.Text + "\n\n" + txt_order.Text, "Trip Summary");
         }
         private void activities_CheckedChanged(object sender, EventArgs e)
         {
@@ -63,6 +64,7 @@ namespace Travel_Plans
             {
                 var box = sender as CheckBox;
                 box.Checked = false;
+                MessageBox.Show("Maximum activites reached!", "Max Reached");
             }
             txt_order.Text = " ";
             txt_subtotal.Text = " ";
@@ -162,7 +164,7 @@ namespace Travel_Plans
                 decimal[] flightPrice = { 350, 450, 550 };// parallel array for price
                 decimal fPRICE = flightPrice[cbo_flights.SelectedIndex];
 
-                decimal[] hotelPrice = { 150, 250, 350 }; //parallel array for toppings
+                decimal[] hotelPrice = { 150, 250, 350 }; //parallel array for price
                 decimal hPRICE = hotelPrice[cbo_hotels.SelectedIndex];
 
                 decimal sTOTAL = fPRICE + hPRICE + actPrice;//calculates the subtotal, tax and total
